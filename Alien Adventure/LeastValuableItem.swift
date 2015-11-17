@@ -18,10 +18,6 @@ extension Hero {
             if i.baseValue < leastValue {
                 leastValue = i.baseValue
                 leastValueItem = i
-                print(leastValue)
-                print(leastValueItem)
-            } else {
-                print("baseValue is biggest than leastValue")
             }
         }
         
