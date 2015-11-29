@@ -9,5 +9,25 @@
 import Foundation
 
 func <(lhs: UDItem, rhs: UDItem) -> Bool {
-    return true
+
+    let leftRarity = lhs.rarity.rawValue
+    let rightRarity = rhs.rarity.rawValue
+    
+    if leftRarity < rightRarity {
+        return true
+    } else if leftRarity == rightRarity {
+        
+        let leftBaseValue = lhs.baseValue
+        let rightBaseValue = rhs.baseValue
+        
+        if leftBaseValue < rightBaseValue {
+            return true
+        } else {
+            return false
+        }
+        
+    } else {
+        return false
+    }
+    
 }
