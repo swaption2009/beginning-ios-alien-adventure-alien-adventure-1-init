@@ -35,15 +35,15 @@ extension Hero {
                         score += rareItem * 3
                         if let legendaryItem = i.objectForKey("LegendaryItemsDetected") as? Int {
                             score += legendaryItem * 4
-                            print(score)
-                            print(highestScore)
+                            // print(score)
+                            // print(highestScore)
                             if let planet = i.objectForKey("Name") as? String {
                                 if score > highestScore {
                                     highestScore = score
                                     winningPlanet = planet
-                                    print(winningPlanet)
+                                    // print(winningPlanet)
                                 } else {
-                                    print("score is not higher")
+                                    // print("score is not higher")
                                 }
                             }
                         }
