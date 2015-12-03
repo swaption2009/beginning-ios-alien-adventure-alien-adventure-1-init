@@ -18,5 +18,11 @@ class SpecialBadge: Badge {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    enum BadgeAnimation: Int {
+        case GrowAndShrink = 0, Rotate, Shake
+    }
+    
+    
 
 }
