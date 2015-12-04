@@ -37,25 +37,34 @@ class SettingsViewController: UIViewController {
         startGameButton.titleLabel?.font = UIFont(name: Settings.Common.Font, size: 20)
         
         addTargets()
+        
     }
     
     // MARK: Add Targets
     
     func addTargets() {
         print("adding targets!")
+        startGameButton.addTarget(self, action: Selector("startGame"), forControlEvents: .TouchUpInside)
+        levelSegmentedControl.addTarget(self, action: Selector("switchLevel:"), forControlEvents: .ValueChanged)
+        showBadgesSwitch.addTarget(self, action: Selector("showBadges:"), forControlEvents: .ValueChanged)
     }
     
     // MARK: Implementing Actions
     
     func switchLevel(segmentControl: UISegmentedControl) {
-        print("level control has changed!")
+        // print("level control has changed!")
+        Settings.Common.Level = levelSegmentedControl.selectedSegmentIndex
     }
     
     func showBadges(switchControl: UISwitch) {
-        print("show badges switch has changed!")
+        // print("show badges switch has changed!")
+        Settings.Common.ShowBadges = showBadgesSwitch.on
     }
     
     func startGame() {
-        print("start button has been pressed!")
+        // print("start button has been pressed!")
+        let alienAdventureViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AlienAdventureViewController")as! AlienAdventureViewController
+        self.presentViewController(alienAdventureViewController, animated: true, completion: nil)
     }
+    
 }
