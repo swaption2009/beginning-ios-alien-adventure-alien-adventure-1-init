@@ -12,7 +12,6 @@ extension Hero {
         let baseValue = inventory.map { return $0.baseValue }
         let totalBaseValue = baseValue.reduce(0) { return $0 + $1 }
         
-        print(totalBaseValue)
         return totalBaseValue
     }
     
