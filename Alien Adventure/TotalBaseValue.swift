@@ -9,7 +9,11 @@
 extension Hero {
     
     func totalBaseValue(inventory: [UDItem]) -> Int {
-        return 0
+        let baseValue = inventory.map { return $0.baseValue }
+        let totalBaseValue = baseValue.reduce(0) { return $0 + $1 }
+        
+        print(totalBaseValue)
+        return totalBaseValue
     }
     
 }
